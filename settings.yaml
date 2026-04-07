@@ -1,0 +1,22 @@
+# Wedding Photo Selector — Configuration
+# All values shown are defaults; edit to tune the system.
+
+face_detector:
+  confidence_threshold: 0.5   # DNN confidence (0-1)
+  min_face_size: 40            # Minimum face pixel width/height
+
+blur_detector:
+  blur_threshold: 80.0         # Laplacian variance below this = blurry
+  use_fft: true                # Also use FFT sharpness metric
+
+emotion_detector:
+  backend: "opencv"            # DeepFace detector backend
+
+eye_detector:
+  ear_threshold: 0.20          # Eye Aspect Ratio below this = closed
+
+scorer:
+  ideal_face_count: 2          # Wedding couples → 2 is ideal
+  blur_min: 0
+  blur_max: 500
+  blur_good: 120               # Blur score above this gives full sharpness points
